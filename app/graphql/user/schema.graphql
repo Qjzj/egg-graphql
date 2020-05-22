@@ -1,0 +1,54 @@
+# 用户
+type User {
+  # 主键索引
+  id: ID
+  # 手机号
+  phone: String,
+  # 邮箱
+  email: String,
+  # 昵称
+  name: String,
+  # 头像
+  avatar: String
+}
+# mutation 注册信息
+input Register {
+  # 昵称
+  name: String!
+  # 手机号
+  phone: String!
+  # 邮箱
+  email: String!
+  # 密码
+  password: String!
+  # 验证码
+  code: String!
+}
+
+# 发送邮件返回的数据
+type SemdMail {
+  accepted: [String]
+  rejected: [String]
+  envelopeTime: Int!
+  messageTime: Int!
+  messageSize: Int!
+  response: String!
+  envelope: Envelope
+  messageId: String!
+}
+# 邮件返回数据子集
+type Envelope {
+  to: String!
+  from: String!
+}
+
+input Login {
+  email: String
+  password: String
+}
+
+type Mutation {
+  sendEmail(email: String): SemdMail!
+  register(data: Register!): User
+  login(data: Login): String!
+}
