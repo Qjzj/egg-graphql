@@ -5,4 +5,5 @@ export default (app: Application) => {
 
   router.get('/', controller.home.index);
   router.get('/code', controller.home.code);
+  router.get('/github/callback', controller.home.github)
 };

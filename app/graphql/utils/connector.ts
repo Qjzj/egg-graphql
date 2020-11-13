@@ -16,4 +16,8 @@ export default class UtilsConnector {
     const html = `<p>您的验证码为： <a href="#" style="color: deepskyblue">${code}</a></p>`
     return await ctx.service.tool.sendMail(email, subject, html);
   }
+  public async githubURL() {
+    const {login_url, client_id, scope} = this.ctx.app.config.github;
+    return `${login_url}?client_id=${client_id}&scope=${scope}&state=${Date.now()}`
+  }
 }

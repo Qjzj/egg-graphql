@@ -15,4 +15,5 @@ export default class UserConnector {
     return await ctx.service.user.register(data);
   }
 
+
 }

@@ -8,6 +8,7 @@ export default class UserService extends  Service{
     this.database = ctx.model.Users;
   }
 
+  // 使用密码注册
   public async register(data: IRegisterData) {
     const {ctx} = this;
     const {code, name, phone, password, email} = data;

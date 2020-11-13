@@ -56,6 +56,13 @@ export default (appInfo: EggAppInfo) => {
       password: '123456',
       db: 0
     }
+  };
+  // 配置github
+  config.github = {
+    login_url: 'https://github.com/login/oauth/authorize',
+    client_id: 'dd11ffcc0ad007eb5d88',
+    client_secret: '158b51bffd14eda8d3647ad50be9625eb78e2bf0',
+    scope: ['user']
   }
 
   // the return config will combines to EggAppConfig
